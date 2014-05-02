@@ -371,8 +371,8 @@ class DigitalOcean {
 	 * @param int $sshKeyId
 	 * @return mixed
 	 */
-	public function addSSHKey($name, $sshKeyPub) {
-		return $this->connectTo('ssh_keys/new/?name=' . $name . '&ssh_key_pub=' . $sshKeyPub);
+	public function addSSHKey($name, $sshPubKey) {
+		return $this->connectTo('ssh_keys/new/?name=' . $name . '&ssh_pub_key=' . $sshPubKey);
 	}
 
 	/**
@@ -391,8 +391,8 @@ class DigitalOcean {
 	 * @param int $sshKeyId
 	 * @return mixed
 	 */
-	public function editSSHKey($sshKeyId, $sshKeyPub) {
-		return $this->connectTo('ssh_keys/' . $sshKeyId . '/edit/?ssh_key_pub=' . $sshKeyPub);
+	public function editSSHKey($sshKeyId, $sshPubKey) {
+		return $this->connectTo('ssh_keys/' . $sshKeyId . '/edit/?ssh_pub_key=' . $sshPubKey);
 	}
 
 	/**
